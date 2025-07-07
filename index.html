@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Edukasi Pasien Radiologi</title>
+    <style>
+        /* --- General Body and Typography --- */
+        html {
+            scroll-behavior: smooth; /* Membuat scroll menjadi halus */
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: #f4f7f6;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* --- Main Container --- */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header Styling --- */
+        .page-header {
+            text-align: center;
+            padding: 20px 20px 10px 20px;
+            background-color: #ffffff;
+            border-bottom: 4px solid #007bff;
+        }
+        .page-header h1 {
+            color: #007bff;
+            font-size: 2.2em;
+            margin: 0;
+        }
+        .page-header p {
+            margin: 5px 0 0;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        /* --- Navigation / Table of Contents --- */
+        .navigation {
+            background-color: #ffffff;
+            padding: 15px 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-list li {
+            margin: 0 8px;
+        }
+        .nav-list a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav-list a:hover, .nav-list a:focus {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        /* --- Section Styling --- */
+        section {
+            padding-top: 60px; /* Memberi ruang agar judul tidak tertutup navigasi sticky */
+            margin-top: -40px; /* Mengkompensasi padding-top */
+            margin-bottom: 40px;
+        }
+        section h2 {
+            font-size: 2em;
+            color: #333;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        /* --- Card Styling for Content --- */
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .card h3 {
+            color: #007bff;
+            margin-top: 0;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+        }
+        .card h4 {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            border-left: 4px solid #007bff;
+            padding-left: 10px;
+        }
+        .card p, .card ul, .card li {
+            font-size: 1.05em;
+        }
+        .card ul {
+            padding-left: 20px;
+        }
+        .card ul li {
+            margin-bottom: 10px;
+        }
+        .card strong {
+            color: #333;
+        }
+
+        /* --- Audio Player Styling --- */
+        audio {
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        /* --- FAQ Section Styling --- */
+        #faq details {
+            background: #fff;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        #faq summary {
+            padding: 20px;
+            font-weight: bold;
+            color: #007bff;
+            cursor: pointer;
+            outline: none;
+        }
+        #faq .faq-answer {
+            padding: 0 20px 20px 20px;
+            color: #555;
+        }
+
+        /* --- Footer Styling --- */
+        .page-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #dbe2e8;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        /* --- Responsive Design for Mobile --- */
+        @media (max-width: 768px) {
+            .nav-list {
+                justify-content: flex-start;
+            }
+            .page-header h1 {
+                font-size: 1.8em;
+            }
+            section h2 {
+                font-size: 1.6em;
+            }
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="page-header">
+        <h1>Portal Edukasi Pasien Radiologi</h1>
+        <p>Unit Radiologi Siloam Hospitals Balikpapan</p>
+    </header>
+
+    <!-- ====== NAVIGATION / DAFTAR ISI ====== -->
+    <nav class="navigation">
+        <ul class="nav-list">
+            <li><a href="#ctscan">CT Scan</a></li>
+            <li><a href="#mri">MRI</a></li>
+            <li><a href="#usg">USG</a></li>
+            <li><a href="#relaksasi">Audio Relaksasi</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main>
+            <!-- ====== BAGIAN SAMBUTAN ====== -->
+            <section id="sambutan">
+                <h2>Selamat Datang, Pasien dan Keluarga</h2>
+                <p>Kami memahami bahwa menjalani pemeriksaan medis bisa menimbulkan pertanyaan dan kecemasan. Portal ini kami siapkan untuk menjadi sahabat Anda, memberikan informasi yang jelas dan akurat agar Anda merasa lebih paham, tenang, dan siap. Silakan gunakan daftar isi di atas untuk langsung menuju ke panduan yang Anda butuhkan.</p>
+            </section>
+
+            <!-- ====== BAGIAN JENIS PEMERIKSAAN ====== -->
+            <section id="ctscan">
+                <h2>Panduan CT Scan</h2>
+                <article class="card">
+                    <h3>CT Scan dengan Kontras</h3>
+                    <h4>Apa itu CT Scan?</h4>
+                    <p>Bayangkan CT Scan seperti mengambil ratusan "irisan" foto Rontgen dari berbagai sudut tubuh Anda. Kemudian, komputer canggih akan menggabungkan semua irisan foto tersebut menjadi sebuah gambar 3D yang sangat detail. Ini memungkinkan dokter untuk melihat organ, tulang, dan pembuluh darah Anda dengan sangat jelas, jauh lebih detail daripada Rontgen biasa.</p>
+
+                    <h4>Mengapa Saya Membutuhkan Pemeriksaan Ini?</h4>
+                    <p>Dokter Anda mungkin merekomendasikan CT Scan untuk berbagai alasan, seperti mendeteksi cedera internal setelah kecelakaan, mencari tahu penyebab nyeri perut atau dada, mendiagnosis tumor atau infeksi, serta memantau perkembangan suatu penyakit.</p>
+
+                    <h4>Persiapan Kunci Sebelum Pemeriksaan</h4>
+                    <ul>
+                        <li><strong>Puasa:</strong> Anda akan diminta berpuasa makan selama 4-6 jam sebelum pemeriksaan. Minum air putih biasanya masih diperbolehkan.</li>
+                        <li><strong>Hasil Lab:</strong> Wajib membawa hasil tes fungsi ginjal (Ureum & Kreatinin) terbaru. Ini penting untuk memastikan ginjal Anda cukup kuat untuk memproses zat kontras.</li>
+                        <li><strong>Lepas Logam:</strong> Lepaskan semua perhiasan logam, jam tangan, dan kacamata, karena dapat mengganggu kualitas gambar.</li>
+                        <li><strong>Informasi Medis:</strong> Beri tahu petugas jika Anda memiliki riwayat alergi (terutama terhadap yodium atau makanan laut) atau sedang mengonsumsi obat-obatan tertentu.</li>
+                    </ul>
+
+                    <h4>Proses Pemeriksaan: Langkah demi Langkah</h4>
+                    <p>Anda akan dipandu melalui beberapa tahap. Pertama, Anda akan diminta mengganti pakaian dengan baju khusus dari rumah sakit. Kemudian, perawat akan memasang jarum infus kecil di lengan Anda. Saat pemeriksaan dimulai, Anda akan berbaring di meja pemeriksaan yang akan bergerak secara otomatis masuk dan keluar dari alat yang berbentuk seperti cincin donat besar. Anda akan mendengar suara mesin bekerja, dan di pertengahan proses, zat kontras akan disuntikkan melalui infus.</p>
+                    
+                    <h4>Dengarkan: Penjelasan Sensasi Zat Kontras</h4>
+                    <audio controls>
+                        <source src="audio_kontras.mp3" type="audio/mpeg">
+                        Browser Anda tidak mendukung pemutar audio.
+                    </audio>
+                    
+                    <h4>Setelah Pemeriksaan Selesai</h4>
+                    <p>Setelah selesai, infus akan dilepas. Sangat dianjurkan untuk minum banyak air putih selama sisa hari itu untuk membantu tubuh membilas zat kontras melalui urine.</p>
+                </article>
+            </section>
+
+            <section id="mri">
+                <h2>Panduan MRI</h2>
+                <article class="card">
+                    <h3>MRI (Magnetic Resonance Imaging)</h3>
+                    <h4>Apa itu MRI?</h4>
+                    <p>Berbeda dengan CT Scan yang menggunakan sinar-X, MRI menggunakan medan magnet yang sangat kuat dan gelombang radio untuk menciptakan gambar organ dan jaringan di dalam tubuh. Keunggulan MRI adalah kemampuannya menampilkan jaringan lunak seperti otot, ligamen, dan otak dengan sangat detail.</p>
+
+                    <h4>Mengapa Saya Membutuhkan Pemeriksaan Ini?</h4>
+                    <p>MRI sering digunakan untuk memeriksa masalah pada sendi (seperti lutut atau bahu), mendeteksi kelainan pada otak dan tulang belakang, serta mengevaluasi kondisi organ-organ tertentu yang tidak terlihat jelas dengan metode lain.</p>
+                    
+                    <h4>Persiapan Kunci Sebelum Pemeriksaan</h4>
+                    <ul>
+                        <li><strong>SANGAT PENTING: Bebas Logam!</strong> Anda harus melepaskan SEMUA benda logam dari tubuh Anda, termasuk perhiasan, jam tangan, kacamata, jepit rambut, gigi palsu, dan alat bantu dengar. Kartu kredit atau ATM juga harus disimpan karena magnet dapat merusaknya.</li>
+                        <li><strong>Informasi Implan:</strong> Wajib informasikan kepada petugas jika Anda memiliki implan logam di tubuh, seperti pen tulang, ring atau katup jantung buatan, dan terutama alat pacu jantung.</li>
+                        <li><strong>Klaustrofobia:</strong> Jika Anda memiliki ketakutan terhadap ruang sempit, sampaikan kepada petugas sebelum pemeriksaan agar dapat dicarikan solusinya.</li>
+                    </ul>
+
+                    <h4>Proses Pemeriksaan: Langkah demi Langkah</h4>
+                    <p>Anda akan diminta berbaring di meja pemeriksaan yang akan masuk ke dalam alat MRI yang berbentuk seperti terowongan panjang. Selama proses yang bisa berlangsung antara 30 hingga 60 menit ini, mesin akan mengeluarkan suara ketukan dan dengungan yang cukup keras. Anda akan diberikan penyumbat telinga atau headphone. Hal terpenting adalah Anda harus tetap diam dan tidak bergerak sama sekali agar gambar yang dihasilkan tidak buram.</p>
+
+                    <h4>Dengarkan: Simulasi Suara Mesin MRI</h4>
+                    <audio controls>
+                        <source src="audio_mri.mp3" type="audio/mpeg">
+                        Browser Anda tidak mendukung pemutar audio.
+                    </audio>
+                </article>
+            </section>
+
+            <section id="usg">
+                <h2>Panduan USG</h2>
+                <article class="card">
+                    <h3>USG Abdomen (Perut)</h3>
+                    <h4>Apa itu USG?</h4>
+                    <p>USG atau Ultrasonografi adalah metode pemeriksaan yang menggunakan gelombang suara berfrekuensi tinggi (yang tidak bisa didengar manusia) untuk menciptakan gambar organ dalam tubuh secara *real-time*. Ini adalah metode yang sangat aman karena tidak menggunakan radiasi sama sekali.</p>
+
+                    <h4>Mengapa Saya Membutuhkan Pemeriksaan Ini?</h4>
+                    <p>USG Abdomen biasanya dilakukan untuk memeriksa kondisi organ-organ di dalam perut seperti hati, kantung empedu, pankreas, limpa, dan ginjal. Pemeriksaan ini dapat membantu dokter mencari tahu penyebab nyeri perut, mendeteksi batu empedu, atau melihat adanya kelainan lain.</p>
+
+                    <h4>Persiapan Kunci Sebelum Pemeriksaan</h4>
+                    <ul>
+                        <li><strong>Puasa:</strong> Anda diwajibkan berpuasa makan dan minum (selain air putih) selama 6-8 jam sebelum pemeriksaan. Makanan di dalam perut dapat menghasilkan gas yang akan menghalangi gelombang suara dan membuat gambar menjadi tidak jelas.</li>
+                        <li><strong>Tahan Kencing:</strong> Sesaat sebelum pemeriksaan, Anda mungkin diminta untuk banyak minum dan menahan kencing. Kandung kemih yang penuh akan membantu mendorong usus ke samping, sehingga organ lain seperti rahim atau prostat (pada pria) dapat terlihat lebih baik.</li>
+                        <li><strong>Pakaian Nyaman:</strong> Kenakan pakaian yang longgar agar mudah saat area perut perlu dibuka untuk pemeriksaan.</li>
+                    </ul>
+
+                    <h4>Proses Pemeriksaan: Langkah demi Langkah</h4>
+                    <p>Anda akan diminta berbaring dengan nyaman. Dokter atau radiografer akan mengoleskan gel bening yang mungkin terasa sedikit dingin ke kulit perut Anda. Gel ini berfungsi untuk menghilangkan kantung udara antara kulit dan alat, sehingga gelombang suara dapat masuk dengan baik. Selanjutnya, alat yang disebut transduser akan digerakkan di atas perut Anda. Anda mungkin akan diminta untuk miring ke kiri atau ke kanan, atau menahan napas sejenak. Proses ini sama sekali tidak menimbulkan rasa sakit.</p>
+                </article>
+            </section>
+
+            <section id="relaksasi">
+                <h2>Audio Relaksasi</h2>
+                <article class="card">
+                    <h3>🧘‍♀️ Jurus Jitu Tetap Tenang</h3>
+                    <p>Merasa cemas adalah hal wajar. Gunakan panduan audio ini untuk melakukan latihan pernapasan singkat yang dapat membantu Anda merasa lebih rileks sebelum atau saat pemeriksaan.</p>
+                    <audio controls>
+                        <source src="audio_relaksasi.mp3" type="audio/mpeg">
+                        Browser Anda tidak mendukung pemutar audio.
+                    </audio>
+                </article>
+            </section>
+
+            <section id="faq">
+                <h2>Tanya Jawab Umum (FAQ)</h2>
+                <details>
+                    <summary>Apakah radiasi dari CT Scan berbahaya?</summary>
+                    <div class="faq-answer">
+                        <p>Dosis radiasi yang digunakan sangat kecil dan sudah diperhitungkan untuk aman bagi diagnostik. Manfaat informasi yang didapat jauh lebih besar daripada risikonya.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Bolehkah saya ditemani keluarga di dalam ruang pemeriksaan?</summary>
+                    <div class="faq-answer">
+                        <p>Umumnya keluarga diminta menunggu di luar untuk alasan proteksi radiasi dan agar staf bisa fokus. Namun, kebijakan dapat bervariasi untuk kasus tertentu seperti pasien anak-anak.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Kapan hasil pemeriksaan saya keluar?</summary>
+                    <div class="faq-answer">
+                        <p>Hasil akan dibaca oleh Dokter Spesialis Radiologi. Biasanya hasil siap dalam 1-2 hari kerja dan akan diserahkan kepada dokter yang merujuk Anda.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Apakah saya perlu puasa sebelum semua pemeriksaan?</summary>
+                    <div class="faq-answer">
+                        <p>Tidak. Puasa hanya diperlukan untuk pemeriksaan tertentu seperti USG Abdomen atau CT Scan dengan kontras. Selalu ikuti instruksi spesifik untuk pemeriksaan Anda yang tertera di portal ini atau yang disampaikan petugas.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Mengapa saya harus melepas semua perhiasan logam untuk MRI?</summary>
+                    <div class="faq-answer">
+                        <p>Mesin MRI menggunakan magnet yang sangat kuat. Benda logam dapat tertarik ke mesin dengan kekuatan besar, membahayakan Anda dan merusak alat. Ini adalah prosedur keselamatan yang wajib dipatuhi.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Apakah saya akan merasakan sakit selama pemeriksaan?</summary>
+                    <div class="faq-answer">
+                        <p>Umumnya, pemeriksaan radiologi seperti Rontgen, USG, CT Scan, dan MRI tidak menimbulkan rasa sakit. Rasa tidak nyaman mungkin timbul dari pemasangan infus atau keharusan untuk menahan posisi tertentu, namun staf kami akan berusaha membuat Anda senyaman mungkin.</p>
+                    </div>
+                </details>
+            </section>
+        </main>
+
+        <footer class="page-footer">
+            <p>Inovasi Pelayanan untuk Kenyamanan Anda</p>
+            <p>&copy; 2025 Unit Radiologi Siloam Hospitals Balikpapan</p>
+        </footer>
+
+    </div> 
+</body>
+</html>
